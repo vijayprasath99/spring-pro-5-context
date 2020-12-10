@@ -1,4 +1,4 @@
-package com.vj.prospring5;
+package com.vj.prospring5.application;
 
 import com.vj.prospring5.service.HelloWorldMessageProvider;
 import com.vj.prospring5.service.MessageProvider;

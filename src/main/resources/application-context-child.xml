@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/lang
+        http://www.springframework.org/schema/lang/spring-lang.xsd">
+
+        <bean id="song1" class="com.vj.prospring5.model.Song"
+            p:title-ref="song1-title"/>
+
+        <bean id="song2" class="com.vj.prospring5.model.Song"
+            p:title-ref="song2-title"/>
+    
+    
+        <bean id="song3" class="com.vj.prospring5.model.Song">
+            <property name="title">
+                <ref parent="song2-title"></ref>
+            </property>
+        </bean>
+
+        <bean id="song4" class="com.vj.prospring5.model.SongV2"
+            p:title-ref="song2-title"
+            p:description-ref="song4-description"/>
+
+        <bean id="song2-title" class="java.lang.String" c:_0="Child: Song - 2"></bean>
+
+        <bean id="song4-description" class="java.lang.String" c:_0="Child: Description of Song 4"></bean>
+    
+</beans>
