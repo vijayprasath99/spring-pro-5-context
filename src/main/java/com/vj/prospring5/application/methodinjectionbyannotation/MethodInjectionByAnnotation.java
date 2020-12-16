@@ -17,11 +17,14 @@ public class MethodInjectionByAnnotation {
         SimpleLookupBean simpleLookupBean = ctx.getBean(SimpleLookupBean.class);
         AbstractLookupBean abstractLookupBean = ctx.getBean(AbstractLookupBean.class);
 
-        displayInfo("simpleLookupBean", simpleLookupBean);
-        displayInfo("abstractLookupBean", abstractLookupBean);
+        int totalBeans = 10000;
+        long simpleLookupBeanTime = displayInfo("simpleLookupBean", simpleLookupBean, totalBeans);
+        long abstractLookupBeanTime = displayInfo("abstractLookupBean", abstractLookupBean, totalBeans);
+
+        System.out.printf("Simple bean time: %d, abstract bean time: %d %n", simpleLookupBeanTime, abstractLookupBeanTime);
     }
 
-    private static void displayInfo(String beanName, DemoBean bean) {
+    private static long displayInfo(String beanName, DemoBean bean, int totalBeans) {
         System.out.printf("----------------START:%s-----------------------%n", beanName);
         Singer singer1 = bean.getSinger();
         Singer singer2 = bean.getSinger();
@@ -31,12 +34,14 @@ public class MethodInjectionByAnnotation {
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
 
-        for(int i = 0; i < 5; i++) {
+        for(int i = 0; i < totalBeans; i++) {
             bean.getSinger().sing();
         }
 
         stopWatch.stop();
         System.out.printf("Stopwatch result to get bean: %s%n", stopWatch.toString());
         System.out.printf("----------------STOP:%s-----------------------%n", beanName);
+
+        return stopWatch.getTotalTimeMillis();
     }
 }
