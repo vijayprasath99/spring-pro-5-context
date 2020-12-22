@@ -1,4 +1,4 @@
-package com.vj.prospring5.application.util;
+package com.vj.prospring5.util;
 
 import java.util.stream.IntStream;
 

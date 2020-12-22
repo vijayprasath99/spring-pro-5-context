@@ -7,9 +7,8 @@ import org.springframework.context.support.GenericApplicationContext;
 
 import java.lang.annotation.Annotation;
 import java.util.Arrays;
-import java.util.Map;
 
-import static com.vj.prospring5.application.util.PrintHelper.delimitLine;
+import static com.vj.prospring5.util.PrintHelper.delimitLine;
 
 public class ApplicationTestingJavaAnnotation {
 
@@ -28,10 +27,6 @@ public class ApplicationTestingJavaAnnotation {
 
         Singer john1 = ctx.getBean("john1", Singer.class);
         Annotation awardAnnotation = Singer.class.getAnnotation(Award.class);
-
-        if (awardAnnotation == null) {
-            System.out.println("Award is null!!");
-        }
 
         if (awardAnnotation instanceof Award) {
             Award john1Award = (Award) awardAnnotation;

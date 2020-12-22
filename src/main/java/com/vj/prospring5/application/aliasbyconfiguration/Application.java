@@ -1,16 +1,14 @@
 package com.vj.prospring5.application.aliasbyconfiguration;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.GenericApplicationContext;
 
 import java.util.Arrays;
 import java.util.Map;
 
-import static com.vj.prospring5.application.util.PrintHelper.delimitLine;
+import static com.vj.prospring5.util.PrintHelper.delimitLine;
 
 public class Application {
 

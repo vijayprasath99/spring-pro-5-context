@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean   id="foo1"
+            primary="true"
+            class="com.vj.prospring5.application.xmlinjection.Foo" />
+
+    <bean   id="foo2"
+            class="com.vj.prospring5.application.xmlinjection.Foo" />
+
+    <bean   id="bar"
+            class="com.vj.prospring5.application.xmlinjection.Bar" />
+
+    <bean   id="targetByName"
+            class="com.vj.prospring5.application.xmlinjection.Target"
+            autowire="byName"
+            lazy-init="true" />
+
+    <bean   id="targetByType"
+            class="com.vj.prospring5.application.xmlinjection.Target"
+            autowire="byType"
+            lazy-init="true" />
+
+    <bean   id="targetConstructor"
+            class="com.vj.prospring5.application.xmlinjection.Target"
+            autowire="constructor"
+            lazy-init="true" />
+</beans>
