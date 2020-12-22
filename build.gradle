@@ -27,6 +27,17 @@ ext {
     slf4jVersion = '1.7.25'
     logbackVersion = '1.2.3'
     jakaraAnnotationVersion = '2.0.0'
+    mainClassName = "com.vj.prospring5.application.aliasbyconfiguration.ApplicationTestingJavaAnnotation"
+}
+
+// Include dependent libraries in archive.
+jar {
+    manifest {
+        attributes "Main-Class": "$mainClassName"
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }
 
 dependencies {
