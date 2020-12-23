@@ -23,11 +23,11 @@ task copyDependencies(type: Copy) {
 jar.dependsOn.add('copyDependencies')
 
 ext {
-    springVersion = '5.0.0.RELEASE'
+    springVersion = '5.3.2'
     slf4jVersion = '1.7.25'
     logbackVersion = '1.2.3'
     jakaraAnnotationVersion = '2.0.0'
-    mainClassName = "com.vj.prospring5.application.xmlinjection.Application"
+    mainClassName = "com.vj.prospring5.application.annotationinjection.Application"
 }
 
 // Include dependent libraries in archive.

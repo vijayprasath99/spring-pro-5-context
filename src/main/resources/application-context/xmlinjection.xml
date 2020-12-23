@@ -5,39 +5,38 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
           http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean   id="foo1"
-            primary="true"
-            class="com.vj.prospring5.application.xmlinjection.Foo" />
+<!--    <bean   id="foo1"-->
+<!--            primary="true"-->
+<!--            class="com.vj.prospring5.application.xmlinjection.Foo" />-->
 
-    <bean   id="foo2"
-            class="com.vj.prospring5.application.xmlinjection.Foo" />
+<!--    <bean   id="foo2"-->
+<!--            class="com.vj.prospring5.application.xmlinjection.Foo" />-->
 
-    <bean   id="bar"
-            class="com.vj.prospring5.application.xmlinjection.Bar" />
+<!--    <bean   id="bar"-->
+<!--            class="com.vj.prospring5.application.xmlinjection.Bar" />-->
 
-    <bean   id="targetByName"
-            class="com.vj.prospring5.application.xmlinjection.Target"
-            autowire="byName"
-            lazy-init="true" />
+<!--    <bean   id="targetByName"-->
+<!--            class="com.vj.prospring5.application.xmlinjection.Target"-->
+<!--            autowire="byName"-->
+<!--            lazy-init="true" />-->
 
-    <bean   id="targetByType"
-            class="com.vj.prospring5.application.xmlinjection.Target"
-            autowire="byType"
-            lazy-init="true" />
+<!--    <bean   id="targetByType"-->
+<!--            class="com.vj.prospring5.application.xmlinjection.Target"-->
+<!--            autowire="byType"-->
+<!--            lazy-init="true" />-->
 
-    <bean   id="targetConstructor"
-            class="com.vj.prospring5.application.xmlinjection.Target"
-            autowire="constructor"
-            lazy-init="true" />
+<!--    <bean   id="targetConstructor"-->
+<!--            class="com.vj.prospring5.application.xmlinjection.Target"-->
+<!--            autowire="constructor"-->
+<!--            lazy-init="true" />-->
 
     <bean id="dad"
           class="com.vj.prospring5.application.xmlinjection.Person"
           p:name="John Smith"
-          abstract="true"
-          p:age="10" />
+          p:age="30" />
 
     <bean id="son"
           class="com.vj.prospring5.application.xmlinjection.Person"
-          parent="dad"
-          p:age="5" />
+          p:age="5"
+          p:name="John Smith Jr."/>
 </beans>

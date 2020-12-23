@@ -16,12 +16,14 @@ public class Application {
     @ComponentScan("com.vj.prospring5.application.annotationinjection")
     public static class ApplicationConfig {
 
-        @Bean
+//        @Lazy
+        @Bean(initMethod = "init")
         public Foo foo1Impl() {
             return new FooImpl();
         }
 
-        @Bean
+//        @Lazy
+        @Bean(initMethod = "init")
         public Foo foo2Impl() {
             return new FooImpl();
         }
@@ -36,12 +38,12 @@ public class Application {
     }
 
     public Application(Foo foo1) {
-        System.out.println("::: Application(foo1) called!");
+//        System.out.println("::: Application(foo1) called!");
         this.foo1 = foo1;
     }
 
     public Application(Foo foo1, Bar bar) {
-        System.out.println("::: Application(foo1,bar) called!");
+//        System.out.println("::: Application(foo1,bar) called!");
         this.foo1 = foo1;
         this.bar = bar;
     }
@@ -49,20 +51,20 @@ public class Application {
     @Autowired
     @Qualifier("foo1Impl")
     public void setFoo1(Foo foo1) {
-        System.out.println("::: setFoo1(foo) called!");
+//        System.out.println("::: setFoo1(foo) called!");
         this.foo1 = foo1;
     }
 
     @Autowired
-    @Qualifier("foo1Impl")
+    @Qualifier("foo2Impl")
     public void setFoo2(Foo foo2) {
-        System.out.println("::: setFoo2(foo) called!");
+//        System.out.println("::: setFoo2(foo) called!");
         this.foo2 = foo2;
     }
 
     @Autowired
     public void setBar(Bar bar) {
-        System.out.println("::: setBar(bar) called!");
+//        System.out.println("::: setBar(bar) called!");
         this.bar = bar;
     }
 
