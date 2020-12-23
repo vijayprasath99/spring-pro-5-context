@@ -15,6 +15,10 @@ public class Application {
 
         delimitLine();
 
+        Map<String, Person> people = ctx.getBeansOfType(Person.class);
 
+        people.entrySet().stream().forEach(System.out::println);
+
+        delimitLine();
     }
 }
