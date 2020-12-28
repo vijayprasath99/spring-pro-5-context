@@ -59,7 +59,6 @@ local.properties
 **/*.out
 build
 build/
-**/*.jar
 
 # Maven specific
 
