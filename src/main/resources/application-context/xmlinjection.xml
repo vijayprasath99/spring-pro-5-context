@@ -30,13 +30,16 @@
 <!--            autowire="constructor"-->
 <!--            lazy-init="true" />-->
 
-    <bean id="dad"
-          class="com.vj.prospring5.application.xmlinjection.Person"
-          p:name="John Smith"
-          p:age="30" />
+    <bean   id="dad"
+            class="com.vj.prospring5.application.xmlinjection.Person"
+            p:name="John Smith"
+            p:age="30" />
 
-    <bean id="son"
-          class="com.vj.prospring5.application.xmlinjection.Person"
-          p:age="5"
-          p:name="John Smith Jr."/>
+    <bean   id="son"
+            class="com.vj.prospring5.application.xmlinjection.Person"
+            p:age="5"
+            p:name="John Smith Jr."/>
+    
+    <bean   id="shutdown hook"
+            class="com.vj.prospring5.application.xmlinjection.ApplicationShutdownHook"/>
 </beans>

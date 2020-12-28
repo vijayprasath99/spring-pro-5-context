@@ -1,9 +1,10 @@
 package com.vj.prospring5.application.xmlinjection;
 
 import jakarta.annotation.PostConstruct;
+import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-public class Person {
+public class Person implements DisposableBean {
     private String name;
     private int age = Integer.MIN_VALUE;
 
@@ -29,13 +30,13 @@ public class Person {
                 ", age=" + age +
                 '}';
     }
+    
+    @Override
+    public void destroy() {
+        System.out.println("::: destroy() " + toString());
+    }
 
     public void afterPropertiesSet() throws Exception {
         System.out.println("::: afterPropertiesSet() " + toString());
-    }
-
-    @PostConstruct
-    public void init() throws Exception {
-        System.out.println("::: postConstruct() " + toString());
     }
 }
