@@ -7,9 +7,9 @@ import org.springframework.beans.factory.InitializingBean;
 import java.security.MessageDigest;
 
 public class MessageDigitsFactoryBean implements FactoryBean<MessageDigest>, InitializingBean {
-    String algorithm = "MD5";
-    
-    MessageDigest messageDigit;
+    private String algorithm = "MD5";
+
+    private MessageDigest messageDigit;
     
     @Override
     public MessageDigest getObject() throws Exception {

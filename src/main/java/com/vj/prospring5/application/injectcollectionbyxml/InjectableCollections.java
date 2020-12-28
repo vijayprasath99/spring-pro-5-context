@@ -1,4 +1,4 @@
-package com.vj.prospring5.application;
+package com.vj.prospring5.application.injectcollectionbyxml;
 
 import org.springframework.context.support.GenericXmlApplicationContext;
 

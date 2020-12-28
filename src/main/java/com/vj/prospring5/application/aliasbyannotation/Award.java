@@ -1,4 +1,4 @@
-package com.vj.prospring5.application.aliasbyconfiguration;
+package com.vj.prospring5.application.aliasbyannotation;
 
 import org.springframework.core.annotation.AliasFor;
 

@@ -1,4 +1,4 @@
-package com.vj.prospring5.application.injectionviaannotation;
+package com.vj.prospring5.application.injectcollectionbyannotation;
 
 import org.springframework.context.support.GenericXmlApplicationContext;
 

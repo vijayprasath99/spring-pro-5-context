@@ -5,16 +5,38 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
           http://www.springframework.org/schema/beans/spring-beans.xsd">
     
-    <bean   id="defaultMessageDigitBeanFactory"
+    <bean   id="defaultMessageDigestFactoryBean"
             class="com.vj.prospring5.application.factorybean.MessageDigitsFactoryBean" />
 
-    <bean   id="sha1MessageDigitBeanFactory"
+    <bean   id="sha1MessageDigitFactoryBean"
             class="com.vj.prospring5.application.factorybean.MessageDigitsFactoryBean"
             p:algorithm="SHA1"/>
     
     <bean   id="messageDigester"
             class="com.vj.prospring5.application.factorybean.MessageDigester"
-            p:messageDigest1-ref="defaultMessageDigitBeanFactory"
-            p:messageDigest2-ref="sha1MessageDigitBeanFactory" />
+            p:messageDigest1-ref="defaultMessageDigestFactoryBean"
+            p:messageDigest2-ref="sha1MessageDigitFactoryBean" />
+
+    <!--  CREATE MESSAGE DIGEST USING CUSTOM FACTORY  -->
+
+    <bean   id="sha1MessageDigestCustomFactory"
+            class="com.vj.prospring5.application.factorybean.MessageDigestFactory"
+            p:algorithm="SHA1" />
+
+    <bean   id="sha1MessageDigest"
+            factory-bean="sha1MessageDigestCustomFactory"
+            factory-method="createInstance" />
+
+    <bean   id="defaultMessageDigestCustomFactory"
+            class="com.vj.prospring5.application.factorybean.MessageDigestFactory"/>
+
+    <bean   id="defaultMessageDigest"
+            factory-bean="defaultMessageDigestCustomFactory"
+            factory-method="createInstance" />
+
+    <bean   id="messageDigesterV2"
+            class="com.vj.prospring5.application.factorybean.MessageDigester"
+            p:messageDigest1-ref="defaultMessageDigest"
+            p:messageDigest2-ref="sha1MessageDigest" />
     
 </beans>

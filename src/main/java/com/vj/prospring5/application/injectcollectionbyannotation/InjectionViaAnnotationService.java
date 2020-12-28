@@ -1,4 +1,4 @@
-package com.vj.prospring5.application.injectionviaannotation;
+package com.vj.prospring5.application.injectcollectionbyannotation;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

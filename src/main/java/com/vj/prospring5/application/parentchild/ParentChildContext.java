@@ -1,4 +1,4 @@
-package com.vj.prospring5.application;
+package com.vj.prospring5.application.parentchild;
 
 import com.vj.prospring5.model.Song;
 import com.vj.prospring5.model.SongV2;

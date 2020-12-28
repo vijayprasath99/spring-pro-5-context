@@ -11,7 +11,7 @@
         http://www.springframework.org/schema/lang
         http://www.springframework.org/schema/lang/spring-lang.xsd">
 
-        <bean id="injectableCollection" class="com.vj.prospring5.application.InjectableCollections">
+        <bean id="injectableCollection" class="com.vj.prospring5.application.injectcollectionbyxml.InjectableCollections">
                 <property name="aSet">
                         <set>
                                 <value>Set Value - 1</value>
