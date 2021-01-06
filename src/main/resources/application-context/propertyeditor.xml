@@ -7,6 +7,23 @@
         http://www.springframework.org/schema/util
         http://www.springframework.org/schema/util/spring-util.xsd">
 
+        <bean   id="customEditorConfigurer"
+                class="org.springframework.beans.factory.config.CustomEditorConfigurer"
+                p:propertyEditorRegistrars-ref="propertyRegistrars">
+                <property name="customEditors">
+                        <map>
+<!--                                <entry-->
+<!--                                        key="com.vj.prospring5.application.propertyeditor.FullName"-->
+<!--                                        value="com.vj.prospring5.application.propertyeditor.FullName.FullNameEditor">-->
+<!--                                </entry>-->
+                        </map>
+                </property>
+        </bean>
+
+        <util:list id="propertyRegistrars">
+                <bean class="com.vj.prospring5.application.propertyeditor.CustomPropertyEditorRegistrar"></bean>
+        </util:list>
+
         <util:list id="stringList">
                 <value>String member 1</value>
                 <value>String member 2</value>
@@ -20,15 +37,14 @@
                 p:stringList-ref="stringList"
                 p:floatValue="123.456"
                 p:date="3/25/13"
-                p:file="#{systemProperties['java.io.tmpdir']}#{systemProperties['file.seperator']}test.txt"
+                p:file="#{systemProperties['java.io.tmpdir']}#{systemProperties['file.separator']}test.txt"
                 p:locale="en_US"
                 p:pattern="a*b"
                 p:properties="name=Chris"
                 p:url="https://spring.io/"
                 p:stream="application-context.xml"
                 p:bytes="John Mayer"
-                p:trimString="   String need trimming   "/>
-
-
-
+                p:trimString="   String need trimming   "
+                p:normalString="   String need does not need trimming   "
+                p:fullName="John Rambo"/>
 </beans>

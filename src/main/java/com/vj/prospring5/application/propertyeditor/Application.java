@@ -29,7 +29,19 @@ public class Application {
     private InputStream stream;          // InputStreamEditor
     private byte[] bytes;
     private String trimString;           // StringTrimmerEditor
+    private String normalString;
+    private FullName fullName;          // Custom Editor
 
+
+    public void setFullName(FullName fullName) {
+        System.out.println("Setting setFullName " + fullName.toString());
+        this.fullName = fullName;
+    }
+
+    public void setNormalString(String normalString) {
+        System.out.printf("Setting normalString: '%s'%n",normalString);
+        this.normalString = normalString;
+    }
 
     public void setBytes(byte[] bytes) {
         System.out.println("Setting bytes " + Arrays.toString(bytes));
@@ -99,14 +111,6 @@ public class Application {
     public void setUrl(URL url) {
         System.out.println("Setting url: " + url.toExternalForm());
         this.url = url;
-    }
-
-    public static class CustomPropetyEditor implements PropertyEditorRegistrar {
-
-        @Override
-        public void registerCustomEditors(PropertyEditorRegistry registry) {
-            registry.registerCustomEditor(String.class, new StringTrimmerEditor(true));
-        }
     }
 
     public static void main(String[] args) throws IOException {
