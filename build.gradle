@@ -27,7 +27,7 @@ ext {
     slf4jVersion = '1.7.25'
     logbackVersion = '1.2.3'
     jakaraAnnotationVersion = '2.0.0'
-    mainClassName = "com.vj.prospring5.application.propertyeditor.Application"
+    mainClassName = "com.vj.prospring5.application.events.Application"
 }
 
 // Include dependent libraries in archive.
